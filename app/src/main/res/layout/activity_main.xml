@@ -82,6 +82,7 @@
 
     <Button
         android:id="@+id/buttonCalculate"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -90,4 +91,14 @@
         android:text="@string/calculate"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/TotalBMI"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.055"
+        app:layout_constraintStart_toEndOf="@+id/textViewBMI"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewProfile" />
 </androidx.constraintlayout.widget.ConstraintLayout>

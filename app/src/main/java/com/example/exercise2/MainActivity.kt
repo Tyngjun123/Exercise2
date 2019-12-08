@@ -13,11 +13,20 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val calculationButton: Button = findViewById(R.id.buttonCalculate)
         calculationButton.setOnClickListener{calculate()}
+
+        val resetButton: Button = findViewById(R.id.buttonReset)
+        resetButton.setOnClickListener{reset()}
+    }
+    private fun reset(){
+        editTextHeight.setText("")
+        editTextWeight.setText("")
+        TotalBMI.setText("")
     }
     private fun calculate(){
         val height = editTextHeight.text.toString().toDouble()
         val weight = editTextWeight.text.toString().toDouble()
         val bmi = weight/(height*height)
+
         val image: ImageView = findViewById(R.id.imageViewProfile)
 
         if(bmi <18.5){
@@ -32,7 +41,7 @@ class MainActivity : AppCompatActivity() {
             R.drawable.over
             imageViewProfile.setImageResource(R.drawable.over)
         }
-
+        TotalBMI.setText(String.format("%.2f",bmi))
 
     }
 }
